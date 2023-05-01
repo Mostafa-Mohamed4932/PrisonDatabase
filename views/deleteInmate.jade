@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1= title
+    form(method='POST' action='/delete/inmate')
+        div.form-group
+        label(for='pid') PID:
+        div.inline-block
+        select.form-control(name='pid' id = 'pid')
+            each pid in pids
+                option(value=pid)= pid
+        div
+            button.btn.btn-delete(type='delete') Delete
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/inmates') View Inmates

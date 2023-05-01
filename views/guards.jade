@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    h1= title
+    table(class='table table-striped table-bordered table-hover')
+        thead 
+            tr
+                th First Name
+                th Last Name
+                th GID
+                th Type
+                th Clearance
+                th Warden
+                each guard in guards
+                    tr
+                        td= guard.GFirst
+                        td= guard.GLast
+                        td= guard.GID
+                        td= guard.GType
+                        td= guard.Clearance
+                        td= guard.Warden
+    div
+        button.btn.btn-back(type='button', onclick='history.back()') Go Back

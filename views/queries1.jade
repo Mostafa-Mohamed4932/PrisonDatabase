@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='/queries/1')
+        div.form-group
+            label(for='clearance') Clearance:
+            div.inline-block
+                select.form-control(name='clearance' id = 'clearance')
+                    each clearance in clearances
+                        option(value=clearance)= clearance
+        div
+            button.btn.btn-insert(type='Search') Search

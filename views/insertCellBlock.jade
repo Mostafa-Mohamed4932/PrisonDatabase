@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='/insert/cellblock')
+        div.form-group
+            label(for='cbname') Cell Block Name (CB_):
+            input.form-control(type='text', name='cbname', id='cbname',placeholder='Enter Cell Block name')
+         div.form-group
+            label(for='nocams') Number of Cameras:
+            input.form-control(type='number', name='nocams', id='nocams', placeholder='Enter number of cameras')
+        div.form-group
+            label(for='cbtype') Cell Block Type:
+            div.inline-block
+                select.form-control(name='cbtype' id = 'cbtype')
+                    each cbtype in cbtypes
+                        option(value=cbtype)= cbtype
+        div
+            button.btn.btn-insert(type='insert') Insert
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/cellblocks') View Cell Blocks

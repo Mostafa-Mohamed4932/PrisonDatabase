@@ -1,0 +1,12 @@
+extends layout 
+
+block content
+    h1= title 
+
+    form(method='POST' action='/queries/0')
+        div.form-group
+            label(for='sentence') Sentence:
+            input.form-control(type='text', name='sentence', id='sentence', placeholder='Enter prisoner sentence')
+
+        div
+            button.btn.btn-insert(type='Search') Search

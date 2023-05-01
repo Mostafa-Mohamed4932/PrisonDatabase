@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='/queries/2')
+    
+        div.form-group
+            label(for='cbtype') Select CBType:
+            div.inline-block
+                select.form-control(name='CBType' id = 'CBType')
+                    each cbtype in cbtypes
+                        option(value=cbtype)= cbtype
+        div
+            button.btn.btn-insert(type='Search') Search

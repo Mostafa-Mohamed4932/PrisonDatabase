@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    h1= title
+    table(class='table table-striped table-bordered table-hover')
+        thead 
+            tr
+                th PID
+                th First Name
+                th Last Name
+                th Gang
+                th Gender
+                th Conduct
+                th Parole
+                th PSentence
+                th CID
+                each inmate in inmates
+                    tr
+                        td= inmate.PID
+                        td= inmate.PFirst
+                        td= inmate.PLast
+                        td= inmate.PGang
+                        td= inmate.Gender
+                        td= inmate.PConduct
+                        td= inmate.Parole
+                        td= inmate.PSentence
+                        td= inmate.CID
+    div
+        button.btn.btn-back(type='button', onclick='history.back()') Go Back

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1= title
+    form(method='POST' action='/delete/guard')
+        div.form-group
+        label(for='gid') GID:
+        div.inline-block
+        select.form-control(name='gid' id = 'gid')
+            each gid in gids
+                option(value=gid)= gid
+        div
+            button.btn.btn-delete(type='delete') Delete
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/guards') View Guards

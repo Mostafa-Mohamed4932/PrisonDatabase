@@ -1,0 +1,56 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='/update/cells')
+        div.form-group
+            label(for='cid') Select CID:
+            div.inline-block
+                select.form-control(name='cid' id = 'cid')
+                    each cid in cids
+                        option(value=cid)= cid
+        select.form-control(name='propselect' id = 'propselect')
+            option(value='') Select a property to update
+            option(value='maxcap') Max Capacity
+            option(value='cbname') Cell Block Name
+
+        
+        div#maxcap(style='display:none;').form-group
+            label(for='maxcap') Max Capacity:
+                div.inline-block
+                    select.form-control(name='maxcap' id = 'maxcap')
+                        option(value=NULL)= NULL
+                        each maxcap in maxcaps
+                            option(value=maxcap)= maxcap
+        div#cbname(style='display:none;').form-group
+            label(for='cbname') Cell Block Name:
+                div.inline-block
+                    select.form-control(name='cbname' id = 'cbname')
+                        option(value=NULL)= NULL
+                        each cbname in cbnames
+                            option(value=cbname)= cbname
+        div
+            button.btn.btn-insert(type='update') Update
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/cells') View Cells
+        script.
+            const propselect = document.getElementById('propselect');
+            const maxcap = document.getElementById('maxcap');
+            const cbname = document.getElementById('cbname');
+            console.log("works");
+            propselect.addEventListener('change', (event) => {
+                const selectedDiv = event.target.value;
+                if (selectedDiv === 'maxcap') {
+                    maxcap.style.display = 'block';
+                    cbname.style.display = 'none';
+                } else if (selectedDiv === 'cbname') {
+                    maxcap.style.display = 'none';
+                    cbname.style.display = 'block';
+                } else if(selectedDiv === ''){
+                    maxcap.style.display = 'none';
+                    cbname.style.display = 'none';
+                }
+            });

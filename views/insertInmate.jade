@@ -1,0 +1,49 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='/insert/inmate')
+
+        div.form-group
+            label(for='pfirst') Prisoner First Name:
+            input.form-control(type='text', name='pfirst', id='pfirst',placeholder='Enter prisoner first name')
+            
+        div.form-group
+            label(for='plast') Prisoner Last Name:
+            input.form-control(type='text', name='plast', id='plast', placeholder='Enter prisoner last name')
+
+        div.form-group
+            label(for='psentence') Sentence:
+            input.form-control(type='text', name='psentence', id='psentence', placeholder='Enter prisoner sentence')   
+
+        div.form-group
+             label(for='pgang') Prisoner's Gang:
+             input.form-control(type='text', name='pgang', id='pgang', placeholder="Enter prisoner's gang")
+
+        div.form-group
+            label(for='cid') Select a cell:
+            div.inline-block
+                select.form-control(name='cid' id = 'cid')
+                    each cid in cids
+                        option(value=cid)= cid
+
+        div.form-group
+            label(for='pconduct') Conduct:
+            div.inline-block
+                select.form-control(name='pconduct' id = 'pconduct')
+                    each pconduct in pconducts
+                        option(value=pconduct)= pconduct
+
+        div.form-group
+            label(for='gender') Gender:
+            div.inline-block
+                select.form-control(name='gender' id = 'gender')
+                    each gender in genders
+                        option(value=gender)= gender
+        div
+            button.btn.btn-insert(type='insert') Insert
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/inmates') View Inmates

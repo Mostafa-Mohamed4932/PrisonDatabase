@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='/queries/3')
+        div.form-group
+            label(for='gid') Select GID:
+            div.inline-block
+                select.form-control(name='GID' id = 'GID')
+                    each gid in gids
+                        option(value=gid)= gid
+        div
+            button.btn.btn-insert(type='Search') Search

@@ -1,0 +1,136 @@
+extends layout
+
+block content
+    h1= title
+    form(method='POST' action='/update/inmates')
+        div.form-group
+            label(for='pid') Select PID:
+            div.inline-block
+                select.form-control(name='pid' id = 'pid')
+                    each pid in pids
+                        option(value=pid)= pid
+        select.form-control(name='propselect' id = 'propselect')
+            option(value='') Select a property to update
+            option(value='pfirst') First Name
+            option(value='plast') Last Name
+            option(value='gender') Gender
+            option(value='psentence') Prisoner Sentence
+            option(value='pgang') Prisoner Gang
+            option(value='pconduct') Prisoner Conduct
+            option(value='cid') Cell ID
+
+        div#pfirst(style='display:none;').form-group
+            label(for='pfirst') First Name:
+            input.form-control(type='text', name='pfirst', id='pfirst', placeholder='Enter First Name')
+        div#plast(style='display:none;').form-group
+            label(for='plast') Last Name:
+            input.form-control(type='text', name='plast', id='plast', placeholder='Enter Last Name')
+        div#gender(style='display:none;').form-group
+            label(for='gender') Gender:
+            div.inline-block
+                select.form-control(name='gender', id='gender')
+                    option(value=NULL)= NULL
+                    each gender in genders
+                        option(value=gender)= gender
+        div#psentence(style='display:none;').form-group
+            label(for='psentence') Prisoner Sentence:
+            input.form-control(type='text', name='psentence', id='psentence', placeholder='Enter Prisoner Sentence')
+        div#pgang(style='display:none;').form-group
+            label(for='pgang') Prisoner Gang:
+            input.form-control(type='text', name='pgang', id='pgang', placeholder='Prisoner Gang')
+        div#pconduct(style='display:none;').form-group
+            label(for='pconduct') Prisoner Conduct:
+            div.inline-block
+                select.form-control(name='pconduct', id='pconduct')
+                    option(value=NULL)= NULL
+                    each pconduct in pconducts
+                        option(value=pconduct)= pconduct
+        div#cid(style='display:none;').form-group
+            label(for='cid') Cell ID:
+            div.inline-block
+                select.form-control(name='cid', id='cid')
+                    option(value=NULL)= NULL
+                    each cid in cids
+                        option(value=cid)= cid
+        div
+            button.btn.btn-insert(type='update') Update
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/inmates') View Inmates
+        script.
+            const propselect = document.getElementById('propselect');
+            const pfirst = document.getElementById('pfirst');
+            const plast = document.getElementById('plast');
+            const gender = document.getElementById('gender');
+            const psentence = document.getElementById('psentence');
+            const pgang = document.getElementById('pgang');
+            const pconduct = document.getElementById('pconduct');
+            const cid = document.getElementById('cid');
+
+            console.log("works");
+            propselect.addEventListener('change', (event) => {
+                const selectedDiv = event.target.value;
+                if (selectedDiv === 'pfirst') {
+                    pfirst.style.display = 'block';
+                    plast.style.display = 'none';
+                    gender.style.display = 'none';
+                    psentence.style.display = 'none';
+                    pgang.style.display = 'none';
+                    pconduct.style.display = 'none';
+                    cid.style.display = 'none';
+                } else if (selectedDiv === 'plast') {
+                    pfirst.style.display = 'none';
+                    plast.style.display = 'block';
+                    gender.style.display = 'none';
+                    psentence.style.display = 'none';
+                    pgang.style.display = 'none';
+                    pconduct.style.display = 'none';
+                    cid.style.display = 'none';
+                }else if(selectedDiv === 'gender'){
+                    pfirst.style.display = 'none';
+                    plast.style.display = 'none';
+                    gender.style.display = 'block';
+                    psentence.style.display = 'none';
+                    pgang.style.display = 'none';
+                    pconduct.style.display = 'none';
+                    cid.style.display = 'none';
+                }else if (selectedDiv === 'psentence') {
+                    pfirst.style.display = 'none';
+                    plast.style.display = 'none';
+                    gender.style.display = 'none';
+                    psentence.style.display = 'block';
+                    pgang.style.display = 'none';
+                    pconduct.style.display = 'none';
+                    cid.style.display = 'none';
+                }else if (selectedDiv === 'pgang') {
+                    pfirst.style.display = 'none';
+                    plast.style.display = 'none';
+                    gender.style.display = 'none';
+                    psentence.style.display = 'none';
+                    pgang.style.display = 'block';
+                    pconduct.style.display = 'none';
+                    cid.style.display = 'none';
+                }else if (selectedDiv === 'pconduct') {
+                    pfirst.style.display = 'none';
+                    plast.style.display = 'none';
+                    gender.style.display = 'none';
+                    psentence.style.display = 'none';
+                    pgang.style.display = 'none';
+                    pconduct.style.display = 'block';
+                    cid.style.display = 'none';
+                }else if (selectedDiv === 'cid') {
+                    pfirst.style.display = 'none';
+                    plast.style.display = 'none';
+                    gender.style.display = 'none';
+                    psentence.style.display = 'none';
+                    pgang.style.display = 'none';
+                    pconduct.style.display = 'none';
+                    cid.style.display = 'block';
+                }
+
+                else if (selectedDiv === '') {
+                    pfirst.style.display = 'none';
+                    plast.style.display = 'none';
+                }
+            });    

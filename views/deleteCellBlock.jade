@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1= title
+    form(method='POST' action='/delete/cellblock')
+        div.form-group
+        label(for='cbname') CBname:
+        div.inline-block
+        select.form-control(name='cbname' id = 'cbname')
+            each cbname in cbnames
+                option(value=cbname)= cbname
+        div
+            button.btn.btn-delete(type='delete') Delete
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/cellblocks') View Cell Blocks

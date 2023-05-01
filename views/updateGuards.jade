@@ -1,0 +1,66 @@
+extends layout
+
+block content
+    h1= title
+    form(method='POST' action='/update/guards')
+        div.form-group
+            label(for='gid') Select GID:
+            div.inline-block
+                select.form-control(name='gid' id = 'gid')
+                    each gid in gids
+                        option(value=gid)= gid
+        select.form-control(name='propselect' id = 'propselect')
+            option(value='') Select a property to update
+            option(value='gfirst') First Name
+            option(value='glast') Last Name
+            option(value='gtype') Guard Type
+
+        div#gfirst(style='display:none;').form-group
+            label(for='gfirst') First Name:
+            input.form-control(type='text', name='gfirst', id='gfirst', placeholder='Enter First Name')
+        div#glast(style='display:none;').form-group
+            label(for='glast') Last Name:
+            input.form-control(type='text', name='glast', id='glast', placeholder='Enter Last Name')
+        div#gtype(style='display:none;').form-group
+            label(for='gtype') Guard Type:
+                div.inline-block
+                    select.form-control(name='gtype' id = 'gtype')
+                        option(value=NULL)= NULL
+                        each gtype in gtypes
+                            option(value=gtype)= gtype
+        div
+            button.btn.btn-insert(type='update') Update
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/guards') View Guards
+        script.
+            const propselect = document.getElementById('propselect');
+            const gfirst = document.getElementById('gfirst');
+            const glast = document.getElementById('glast');
+            const gtype = document.getElementById('gtype');
+
+            console.log("works");
+            propselect.addEventListener('change', (event) => {
+                const selectedDiv = event.target.value;
+                if (selectedDiv === 'gfirst') {
+                    gfirst.style.display = 'block';
+                    glast.style.display = 'none';
+                    gtype.style.display = 'none';
+                } else if (selectedDiv === 'glast') {
+                    gfirst.style.display = 'none';
+                    glast.style.display = 'block';
+                }else if(selectedDiv === 'gtype'){
+                    gfirst.style.display = 'none';
+                    glast.style.display = 'none';
+                    gtype.style.display = 'block';
+            
+                }
+                else if (selectedDiv === '') {
+                    gfirst.style.display = 'none';
+                    glast.style.display = 'none';
+                }
+            });    
+        
+        
+

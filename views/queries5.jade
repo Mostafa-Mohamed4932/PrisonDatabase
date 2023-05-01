@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='/queries/5')
+        div.form-group
+            label(for='cbname') Select CBname:
+            div.inline-block
+                select.form-control(name='CBname' id = 'CBname')
+                    each cbname in cbnames
+                        option(value=cbname)= cbname
+        div
+            button.btn.btn-insert(type='Search') Search

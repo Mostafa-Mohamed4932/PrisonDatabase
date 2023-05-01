@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    h1= title
+    table(class='table table-striped table-bordered table-hover')
+        thead 
+            tr
+                th PID
+                th First Name
+                th Last Name
+                th Gang
+                th Gender
+                th Conduct
+                th Parole
+                th PSentence
+                th CID
+                each result in results
+                    tr
+                        td= result.PID
+                        td= result.PFirst
+                        td= result.PLast
+                        td= result.PGang
+                        td= result.Gender
+                        td= result.PConduct
+                        td= result.Parole
+                        td= result.PSentence
+                        td= result.CID
+    div
+        button.btn.btn-back(type='button', onclick='history.back()') Go Back

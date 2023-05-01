@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='/queries/6')
+        div.form-group
+            label(for='cbtype') CBType:
+            input.form-control(type='text', name='cbtype', id='cbtype', placeholder='Enter Cell Block Type')
+        div
+            button.btn.btn-insert(type='Search') Search

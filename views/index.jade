@@ -1,0 +1,71 @@
+extends layout
+
+block content
+  h1= title
+  h2 Welcome to #{title}
+
+  form(method='POST' action='/')
+
+    div.container
+      div.row
+        div.col-sm-2
+          h3 View:
+        div.col-sm-10
+          a.btn.btn-primary(href='/all') View all
+          a.btn.btn-primary(href='/inmates') View Prisoners
+          a.btn.btn-primary(href='/guards') View Guards
+          a.btn.btn-primary(href='/shifts') View Shifts
+          a.btn.btn-primary(href='/cellblocks') View Cell Blocks
+          a.btn.btn-primary(href='/cells') View Cells
+
+    div.container
+      div.row
+        div.col-sm-2
+          h3 Insert:
+        div.col-sm-10
+          a.btn.btn-primary(href='/insert/inmate') Insert Prisoner
+          a.btn.btn-primary(href='/insert/guard') Insert Guard
+          a.btn.btn-primary(href='/insert/shift') Insert Shift
+          a.btn.btn-primary(href='/insert/cellblock') Insert Cell Block
+          a.btn.btn-primary(href='/insert/cell') Insert Cell
+    div.container
+      div.row
+        div.col-sm-2
+          h3 Update:
+        div.col-sm-10
+          a.btn.btn-primary(href='/update/inmates') Update Inmate
+          a.btn.btn-primary(href='/update/guards') Update Guard
+          a.btn.btn-primary(href='/update/shifts') Update Shift
+          a.btn.btn-primary(href='/update/cellblocks') Update Cell Block
+          a.btn.btn-primary(href='/update/cells') Update Cell
+    div.container
+      div.row
+        div.col-sm-2
+          h3 Delete:
+        div.col-sm-10
+          a.btn.btn-primary(href='/delete/inmate') Delete Prisoner
+          a.btn.btn-primary(href='/delete/guard') Delete Guard
+          a.btn.btn-primary(href='/delete/shift') Delete Shift
+          a.btn.btn-primary(href='/delete/cellblock') Delete Cell Block
+          a.btn.btn-primary(href='/delete/cell') Delete Cell
+  h1= "Main Operations"
+  div.container
+    div.row
+      div.col-sm-2
+        h3 Operations:
+      div.col-sm-10
+        a.btn.btn-primary(href='/insert/inmate') Insert Prisoner
+        a.btn.btn-primary(href='/operation/moveinmate') Move Prisoner
+        a.btn.btn-primary(href='/operation/cellcount') Number of Inmates in all Cells
+  h1= "Queries"
+  table.querytable
+   -var index = 0
+      thead 
+          tr.queryrow
+              th.queryh Queries
+              th.queryh Description
+              each query in queries
+                  tr.queryrow
+                      td
+                       a.btn.btn-queries(href='/queries/#{index++}')= query.name
+                      td= query.description

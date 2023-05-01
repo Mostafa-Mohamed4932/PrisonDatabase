@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='/insert/shift')
+        div.form-group
+            label(for='day') Day:
+            div.inline-block
+                select.form-control(name='day' id = 'day')
+                    each day in days
+                        option(value=day)= day
+        div.form-group
+            label(for='time_') Time:
+            div.inline-block
+                select.form-control(name='time_' id = 'time_')
+                    each time_ in time_s
+                     option(value=time_)= time_
+        div.form-group
+            label(for='gid') GID:
+            div.inline-block
+                select.form-control(name='gid' id = 'gid')
+                    each gid in gids
+                        option(value=gid)= gid
+        div.form-group
+            label(for='cbname') Cell Block Name:
+            div.inline-block
+                select.form-control(name='cbname' id = 'cbname')
+                    each cbname in cbnames
+                        option(value=cbname)= cbname
+        div
+            button.btn.btn-insert(type='insert') Insert
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/shifts') View Shifts

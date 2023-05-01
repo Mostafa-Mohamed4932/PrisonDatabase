@@ -1,0 +1,53 @@
+extends layout
+
+block content
+    h1= title
+    form(method='POST' action='/update/cellblocks')
+        div.form-group
+            label(for='cbname') Select CBname:
+            div.inline-block
+                select.form-control(name='cbname' id = 'cbname')
+                    each cbname in cbnames
+                        option(value=cbname)= cbname
+    
+        select.form-control(name='propselect' id = 'propselect')
+            option(value='') Select a property to update
+            option(value='cbtype') Cell Block Type
+            option(value='noCams') Number of Cameras
+
+        div#cbtype(style='display:none;').form-group
+            label(for='cbtype') Cell Block Type:
+                div.inline-block
+                    select.form-control(name='cbtype' id = 'cbtype')
+                        option(value=NULL)= NULL
+                        each cbtype in cbtypes
+                            option(value=cbtype)= cbtype
+        div#noCams(style='display:none;').form-group
+            label(for='nocams') Number of Cameras:
+            input.form-control(type='number', name='nocams', id='nocams', placeholder='Enter number of cameras')
+        div
+            button.btn.btn-insert(type='update') Update
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/cellblocks') View Cell Blocks
+        
+        script.
+            const propselect = document.getElementById('propselect');
+            const cbtype = document.getElementById('cbtype');
+            const noCams = document.getElementById('noCams');
+            console.log("works");
+            propselect.addEventListener('change', (event) => {
+                const selectedDiv = event.target.value;
+                if (selectedDiv === 'cbtype') {
+                    cbtype.style.display = 'block';
+                    noCams.style.display = 'none';
+                } else if (selectedDiv === 'noCams') {
+                    cbtype.style.display = 'none';
+                    noCams.style.display = 'block';
+                }else if (selectedDiv === '') {
+                    cbtype.style.display = 'none';
+                    noCams.style.display = 'none';
+                }
+            });    
+        

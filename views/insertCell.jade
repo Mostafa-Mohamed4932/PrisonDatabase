@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='/insert/cell')
+        div.form-group
+        label(for='maxcap') Max Capacity:
+        div.inline-block
+            select.form-control(name='maxcap' id = 'maxcap')
+                each maxcap in maxcaps
+                    option(value=maxcap)= maxcap
+        div.form-group
+        label(for='cbname') Cell Block Name:
+        div.inline-block
+            select.form-control(name='cbname' id = 'cbname')
+                each cbname in cbnames
+                    option(value=cbname)= cbname
+        div
+            button.btn.btn-insert(type='insert') Insert
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/cells') View Cell

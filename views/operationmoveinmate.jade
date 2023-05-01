@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='/operation/moveinmate')
+    
+        div.form-group
+            label(for='pid') Select PID:
+            div.inline-block
+                select.form-control(name='PID' id = 'PID')
+                    each pid in pids
+                        option(value=pid)= pid
+        div.form-group
+            label(for='cid') Select CID:
+            div.inline-block
+                select.form-control(name='CID' id = 'CID')
+                    each cid in cids
+                        option(value=cid)= cid
+        div
+            button.btn.btn-insert(type='Move') Move

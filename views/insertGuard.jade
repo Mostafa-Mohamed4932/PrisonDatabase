@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='/insert/guard')
+
+        div.form-group
+            label(for='guardFirstName') Guard First Name:
+            input.form-control(type='text', name='guardFirstName', id='guardFirstName',placeholder='Enter guard first name')
+            
+        div.form-group
+            label(for='guardLastName') Guard Last Name:
+            input.form-control(type='text', name='guardLastName', id='guardLastName', placeholder='Enter guard last name')
+
+        div.form-group
+            label(for='type') Type:
+            div.inline-block
+                select.form-control(name='type' id = 'type')
+                    each type in types
+                        option(value=type)= type
+        div
+            button.btn.btn-insert(type='insert') Insert
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/guards') View Guards

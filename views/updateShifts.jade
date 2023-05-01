@@ -1,0 +1,108 @@
+extends layout
+
+block content
+    h1= title
+    form(method='POST' action='/update/shifts')
+        div.form-group
+            label(for='day') Day:
+            div.inline-block
+                select.form-control(name='day' id = 'day')
+                    each day in days
+                        option(value=day)= day
+        div.form-group
+            label(for='time_') Time:
+            div.inline-block
+                select.form-control(name='time_' id = 'time_')
+                    each time_ in time_s
+                     option(value=time_)= time_
+        div.form-group
+            label(for='gid') GID:
+            div.inline-block
+                select.form-control(name='gid' id = 'gid')
+                    each gid in gids
+                        option(value=gid)= gid
+        div.form-group
+            label(for='cbname') Cell Block Name:
+            div.inline-block
+                select.form-control(name='cbname' id = 'cbname')
+                    each cbname in cbnames
+                        option(value=cbname)= cbname
+        select.form-control(name='propselect' id = 'propselect')
+            option(value='') Select a property to update
+            option(value='day') Day
+            option(value='time_') Time
+            option(value='gid') Guard ID
+            option(value='cbname') Cell Block Name
+
+        div#day1(style='display:none;').form-group
+            label(for='day1') Day:
+            div.inline-block
+                select.form-control(name='day1', id='day1')
+                    option(value=NULL)= NULL
+                    each day1 in day1s
+                        option(value=day)= day1
+        div#time_1(style='display:none;').form-group
+            label(for='time_1') Time:
+            div.inline-block
+                select.form-control(name='time_1', id='time_1')
+                    option(value=NULL)= NULL
+                    each time_1 in time_1s
+                        option(value=time_1)= time_1
+        div#gid1(style='display:none;').form-group
+            label(for='gid1') Guard ID:
+            div.inline-block
+                select.form-control(name='gid1', id='gid1')
+                    option(value=NULL)= NULL
+                    each gid1 in gid1s
+                        option(value=gid1)= gid1
+        div#cbname1(style='display:none;').form-group
+            label(for='cbname1') Cell Block Name:
+            div.inline-block
+                select.form-control(name='cbname1', id='cbname1')
+                    option(value=NULL)= NULL
+                    each cbname1 in cbname1s
+                        option(value=cbname1)= cbname1 
+        div
+            button.btn.btn-insert(type='update') Update
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/shifts') View Shifts
+
+        script.
+            const propselect = document.getElementById('propselect');
+            const day1 = document.getElementById('day1');
+            const time_1 = document.getElementById('time_1');
+            const gid1 = document.getElementById('gid1');
+            const cbname1 = document.getElementById('cbname1');
+
+            console.log("works");
+            propselect.addEventListener('change', (event) => {
+                const selectedDiv = event.target.value;
+                if (selectedDiv === 'day') {
+                    day1.style.display = 'block';
+                    time_1.style.display = 'none';
+                    gid1.style.display = 'none';
+                    cbname1.style.display = 'none';
+                } else if (selectedDiv === 'time_') {
+                    day1.style.display = 'none';
+                    time_1.style.display = 'block';
+                    gid1.style.display = 'none';
+                    cbname1.style.display = 'none';
+                }else if(selectedDiv === 'gid'){
+                    day1.style.display = 'none';
+                    time_1.style.display = 'none';
+                    gid1.style.display = 'block';
+                    cbname1.style.display = 'none';
+                }else if(selectedDiv == 'cbname'){
+                    day1.style.display = 'none';
+                    time_1.style.display = 'none';
+                    gid1.style.display = 'none';
+                    cbname1.style.display = 'block';
+                }
+
+                else if (selectedDiv === '') {
+                    day1.style.display = 'none';
+                    time_1.style.display = 'none';
+                }
+            });    
