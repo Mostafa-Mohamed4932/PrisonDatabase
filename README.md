@@ -9,7 +9,7 @@ The database schema includes tables for inmates, cell blocks, guards, cells, and
 The web interface allows authorized users to add, edit, and delete records, search for inmates, and generate reports. The application is designed to be secure and efficient, reducing paperwork and errors and improving transparency and accountability.
 
 # Website front end:
-![Uploading WhatsApp Image 2023-05-25 at 01.36.48.jpg…]()
+![WhatsApp Image 2023-05-25 at 01 36 48](https://github.com/Mostafa-Mohamed4932/PrisonDatabase/assets/125306561/c83b3861-2c87-469c-995a-fa8e6382beb2)
 
 ![WhatsApp Image 2023-05-25 at 01 36 55](https://github.com/Mostafa-Mohamed4932/PrisonDatabase/assets/125306561/9498f565-f2e6-4cf7-bc74-975e3f5809ec)
 
