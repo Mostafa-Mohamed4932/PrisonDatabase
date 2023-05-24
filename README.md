@@ -32,9 +32,13 @@ The web interface allows authorized users to add, edit, and delete records, sear
 
 To run the application, you need to have Microsoft SQL Server installed and create a database instance with the provided schema. Then, you need to configure the Node.js server to connect to the database and start the web application. The code includes comments and documentation to guide you through the setup process.
 
-Database Queries:
+Microsoft SQL Server:
 
+![image](https://github.com/Mostafa-Mohamed4932/PrisonDatabase/assets/125306561/76480f61-9864-44dc-a7d8-16189cf733f3)
 
+![image](https://github.com/Mostafa-Mohamed4932/PrisonDatabase/assets/125306561/d11243ed-eb0c-4507-a09c-e817db6d8936)
+
+![image](https://github.com/Mostafa-Mohamed4932/PrisonDatabase/assets/125306561/c1849228-0482-44b7-8d7b-8c36f46946a8)
 
 The website could be hosted online using a service such as Ngrok
 
