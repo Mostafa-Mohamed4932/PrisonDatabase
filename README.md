@@ -14,15 +14,19 @@ Website front end:
 ![WhatsApp Image 2023-05-25 at 01 36 55](https://github.com/Mostafa-Mohamed4932/PrisonDatabase/assets/125306561/9498f565-f2e6-4cf7-bc74-975e3f5809ec)
 
 Update information (Shifts) Sample:
+
 ![WhatsApp Image 2023-05-25 at 01 35 59](https://github.com/Mostafa-Mohamed4932/PrisonDatabase/assets/125306561/0aa73422-6734-4f99-b6a3-11b053df3946)
 
 Delete information (Cell) Sample:
+
 ![WhatsApp Image 2023-05-25 at 01 36 54](https://github.com/Mostafa-Mohamed4932/PrisonDatabase/assets/125306561/cc015b29-eaa5-4591-8bd7-75291818af50)
 
 Insert information (Inmate) Sample:
+
 ![WhatsApp Image 2023-05-25 at 01 36 54](https://github.com/Mostafa-Mohamed4932/PrisonDatabase/assets/125306561/2d5f4ea8-346c-4174-afb9-e7ef1f04594a)
 
 Table displaying Information:
+
 ![WhatsApp Image 2023-05-25 at 01 36 55](https://github.com/Mostafa-Mohamed4932/PrisonDatabase/assets/125306561/5895c55f-90b9-4bf1-9246-3d93d434ee61)
 
 
