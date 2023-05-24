@@ -30,9 +30,9 @@ The web interface allows authorized users to add, edit, and delete records, sear
 ![WhatsApp Image 2023-05-25 at 01 36 55](https://github.com/Mostafa-Mohamed4932/PrisonDatabase/assets/125306561/5895c55f-90b9-4bf1-9246-3d93d434ee61)
 
 
-To run the application, you need to have Microsoft SQL Server installed and create a database instance with the provided schema. Then, you need to configure the Node.js server to connect to the database and start the web application. The code includes comments and documentation to guide you through the setup process.
+To run the application, you need to have Microsoft SQL Server installed and create a database instance with the provided schema. Then, you need to configure the Node.js server to connect to the database and start the web application. The code includes comments and documentation to guide you through the setup process. To access the same information used in this project, you may open the SQL file titled "SQL", or run the bacpac file from within the Microsoft SQL Server.
 
-Microsoft SQL Server:
+#Microsoft SQL Server:
 
 ![image](https://github.com/Mostafa-Mohamed4932/PrisonDatabase/assets/125306561/76480f61-9864-44dc-a7d8-16189cf733f3)
 
