@@ -32,6 +32,10 @@ The web interface allows authorized users to add, edit, and delete records, sear
 
 To run the application, you need to have Microsoft SQL Server installed and create a database instance with the provided schema. Then, you need to configure the Node.js server to connect to the database and start the web application. The code includes comments and documentation to guide you through the setup process.
 
+Database Queries:
+
+
+
 The website could be hosted online using a service such as Ngrok
 
 Overall, this project aims to provide a comprehensive solution for managing prison data, helping prison administrators to track inmate movements, guard assignments, cell block occupancy, and shift schedules.
